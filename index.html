@@ -5,8 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="js/web3.min.js"></script>
 </head>
 <body>
-    <h1>dapp</h1>
+    <div class="number"></div>
+    <button class="get-num">获取number</button>
+    <button class="add-num">调用numAdd</button>
+    <script>
+        // Start here
+        var cryptoZombies;
+        var cryptoZombiesABI = [
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "numAdd",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getNum",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "num",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+      function startApp(){
+         var cryptoZombiesAddress = '0x3fbd77d80f3402bc5408d1258d0e7dd147d356c6';
+          cryptoZombies = new web3.eth.Contract(cryptoZombiesABI, cryptoZombiesAddress);
+          myContract.methods.getNum().call().then(function(err,result){
+              if(!err){
+                  console.log(result)
+              }
+          })
+      }
+        window.addEventListener('load', function() {
+  
+        // 检查web3是否已经注入到(Mist/MetaMask)
+        if (typeof web3 !== 'undefined') {
+          // 使用 Mist/MetaMask 的提供者
+          web3 = new Web3(web3.currentProvider);
+        } else {
+          console.log(111)
+          web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+        }
+  
+        // 现在你可以启动你的应用并自由访问 Web3.js:
+        startApp()
+  
+      })
+      </script>
 </body>
 </html>
