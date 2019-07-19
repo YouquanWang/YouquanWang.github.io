@@ -87,7 +87,7 @@
 			function startApp(){
          var cryptoZombiesAddress = '0x3fbd77d80f3402bc5408d1258d0e7dd147d356c6';
           myContract = new web3.eth.contract(cryptoZombiesABI, cryptoZombiesAddress);
-          myContract.methods.getNum().call().then(function(err,result){
+          myContract.getNum().call().then(function(err,result){
               if(!err){
                   console.log(result)
               }
