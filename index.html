@@ -73,15 +73,6 @@
 		"type": "function"
 	}
 ]
-      function startApp(){
-         var cryptoZombiesAddress = '0x3fbd77d80f3402bc5408d1258d0e7dd147d356c6';
-          cryptoZombies = new web3js.eth.Contract(cryptoZombiesABI, cryptoZombiesAddress);
-          myContract.methods.getNum().call().then(function(err,result){
-              if(!err){
-                  console.log(result)
-              }
-          })
-      }
         window.addEventListener('load', function() {
   
         // 检查web3是否已经注入到(Mist/MetaMask)
@@ -97,7 +88,16 @@
         // 现在你可以启动你的应用并自由访问 Web3.js:
         startApp()
   
-      })
+			})
+			function startApp(){
+         var cryptoZombiesAddress = '0x3fbd77d80f3402bc5408d1258d0e7dd147d356c6';
+          cmyContract = new web3js.eth.Contract(cryptoZombiesABI, cryptoZombiesAddress);
+          myContract.methods.getNum().call().then(function(err,result){
+              if(!err){
+                  console.log(result)
+              }
+          })
+      }
       </script>
 </body>
 </html>
