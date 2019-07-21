@@ -91,6 +91,13 @@
 					console.log(info)
 					var numdom = document.querySelector('.add-num');
 					console.log(numdom)
+					numdom.onclick=function(){
+						info.numAdd(function(err,result){
+							if(!err){
+								console.log(result)
+							}
+						})
+					}
           // myContract.getNum().call().then(function(err,result){
           //     if(!err){
           //         console.log(result)
