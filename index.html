@@ -84,13 +84,13 @@
 				console.log(web3)
 				web3.eth.getCoinbase().then(function(res){
 					web3.eth.defaultAccount = res
+					startApp()
 				})
-        startApp()
   
 			})
 			function startApp(){
          var cryptoZombiesAddress = '0x3fbd77d80f3402bc5408d1258d0e7dd147d356c6';
-					var info = new web3.eth.Contract(cryptoZombiesABI,cryptoZombiesAddress);
+					var info = new web3.eth.Contract(cryptoZombiesABI,cryptoZombiesAddress,{from:web3.eth.defaultAccount});
 					console.log(info)
 					var numdom = document.querySelector('.add-num');
 					var getNumdom = document.querySelector('.get-num');
