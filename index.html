@@ -94,19 +94,14 @@
 					var getNumdom = document.querySelector('.get-num');
 					console.log(numdom)
 					numdom.onclick=function(){
-						info.methods.numAdd().call().then(function(err,result){
-							if(!err){
-								console.log(result)
-								console.log(111)
-							}
+						info.methods.numAdd().call().then(function(res){
+							console.log(res)
 						})
 					}
 					getNumdom.onclick = function(){
 						info.methods.getNum().call().then(
-							function(err,result){
-							if(!err){
-									console.log(result)
-              }
+							function(res){
+								console.log(res)
 						})
 					}
           // myContract.getNum().call().then(function(err,result){
