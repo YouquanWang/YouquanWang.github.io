@@ -88,8 +88,7 @@
 			})
 			function startApp(){
          var cryptoZombiesAddress = '0x3fbd77d80f3402bc5408d1258d0e7dd147d356c6';
-					var myContract = new web3.eth.Contract(cryptoZombiesABI);
-					var info = myContract.at(cryptoZombiesAddress)
+					var info = new web3.eth.Contract(cryptoZombiesABI,ryptoZombiesAddress);
 					console.log(info)
 					var numdom = document.querySelector('.add-num');
 					var getNumdom = document.querySelector('.get-num');
