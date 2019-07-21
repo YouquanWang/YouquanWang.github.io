@@ -101,7 +101,7 @@
 						})
 					}
 					getNumdom.onclick = function(){
-						info.getNum(function(err,result){
+						info.getNum.call(function(err,result){
 							if(!err){
 									console.log(result)
               }
