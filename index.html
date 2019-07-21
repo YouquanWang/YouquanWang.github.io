@@ -90,12 +90,21 @@
 					var info = myContract.at(cryptoZombiesAddress)
 					console.log(info)
 					var numdom = document.querySelector('.add-num');
+					var getNumdom = document.querySelector('.get-num');
 					console.log(numdom)
 					numdom.onclick=function(){
 						info.numAdd(function(err,result){
 							if(!err){
 								console.log(result)
+								console.log(111)
 							}
+						})
+					}
+					getNumdom.onclick = function(){
+						info.getNum(function(err,result){
+							if(!err){
+									console.log(result)
+              }
 						})
 					}
           // myContract.getNum().call().then(function(err,result){
