@@ -96,7 +96,7 @@
 					var getNumdom = document.querySelector('.get-num');
 					console.log(numdom)
 					numdom.onclick=function(){
-						info.methods.numAdd().call().then(function(res){
+						info.methods.numAdd().send().then(function(res){
 							console.log(res)
 						})
 					}
